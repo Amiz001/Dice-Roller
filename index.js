@@ -9,16 +9,6 @@ const failedSound = new Audio('audio/failed.mp3');
 let cardValue = 0;
 let randomeValue;
 
-/*cards.forEach(card => {
-    card.addEventListener('click', () => {
-      cards.forEach(c => c.classList.remove('active'));
-
-      card.classList.add('active');
-
-      result.textContent = "Card Value = " + cardValue;
-    });
-  });*/
-
   for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener('click', function() {
       for (let j = 0; j < cards.length; j++) {
