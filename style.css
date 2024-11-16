@@ -9,7 +9,7 @@ body{
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(18, 18, 18);
 }
 #main-container{
     height: 70vh;
@@ -38,9 +38,10 @@ h1{
     color: black;
     font-size: 2em;
     font-weight: bold;
+    cursor: pointer;
     border: 2px solid black;
 }
-.toggleCard{
+.active{
     width: 50px;
     height: 50px;
     display: flex;
@@ -51,6 +52,7 @@ h1{
     font-size: 2em;
     font-weight: bold;
     border: 2px solid black;
+    cursor: pointer;
 }
 #rollBtn{
     font-size: 1.2em;
@@ -60,13 +62,21 @@ h1{
     border-radius: 6px;
     padding: 8px 13px ;
     width: 150px;
+    cursor: pointer;
+}
+#rollBtn:hover{
+    color: black;
+    background-color: rgb(197, 255, 8);
 }
 #diceAnimation{
     margin-top: 50px;
 }
-#diceAnimation img{
+#dice{
     height: 100px;
-    animation: roll 5s ease-out infinite;
+    /*animation: roll 5s ease-out infinite;*/
+}
+.anime{
+    animation: rolling 2s ease-out;
 }
 
 @keyframes roll{
@@ -82,4 +92,24 @@ h1{
     100%{
         rotate: 360deg;
     }
+}
+
+@keyframes rolling {
+    0%{
+        rotate: 0deg;
+        filter: blur(100);
+    }
+    50%{
+        rotate: 720deg;
+        filter: blur(0);
+    }
+    100%{
+        rotate: 720deg;
+        filter: blur(0);
+    }
+}
+#result{
+    color: rgb(255, 210, 8);
+    font-size: 30px;
+    margin-top: 40px;
 }
