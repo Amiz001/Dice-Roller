@@ -2,12 +2,16 @@ const cards = document.querySelectorAll('.card');
 const rollBtn = document.getElementById('rollBtn');
 const result = document.getElementById('result');
 const dice = document.getElementById('dice');
+const scoreText = document.getElementById('scoretitle'); 
+const roundText = document.getElementById('scoretitle2'); 
 
 const successSound = new Audio('audio/success.mp3');
 const failedSound = new Audio('audio/failed.mp3');
 
 let cardValue = 0;
 let randomeValue;
+let score = 0 ;
+let round = 0 ;
 
   for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener('click', function() {
@@ -36,12 +40,18 @@ let randomeValue;
         if(cardValue == randomeValue){
             result.textContent = "Correct Guess!";
             successSound.play();
+            score += 5;
+            round++;
         }
         else{
             result.textContent = `Wrong Guess!`;
             failedSound.play();
+            round++;
         }
     }
+
+    scoreText.textContent = `Score: ${score}`;
+    roundText.textContent = `Round: ${round}`;
   });
 
 
